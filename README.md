@@ -2,6 +2,7 @@
 
 Allows building of flutter projects which use [flutter wrapper](https://github.com/passsy/flutter_wrapper)
 
+Checkout [dockerhub](https://cloud.docker.com/repository/docker/passsy/flutterw/) for the latest version
 
 ## License
 
