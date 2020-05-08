@@ -4,10 +4,21 @@ Allows building of flutter projects which use [flutter wrapper](https://github.c
 
 Checkout [dockerhub](https://cloud.docker.com/repository/docker/passsy/flutterw/) for the latest version
 
+## Build
+
+```bash
+docker build -t passsy/flutterw:0.2.0 .
+```
+
+## Release
+```bash
+docker push passsy/flutterw:0.2.0
+```
+
 ## License
 
 ```
-Copyright 2019 Pascal Welsch
+Copyright 2020 Pascal Welsch
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
