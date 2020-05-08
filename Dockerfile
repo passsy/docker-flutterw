@@ -9,7 +9,7 @@ ENV HOME=/home/dash \
 
 # Install all dependencies which flutter requires
 RUN apt-get update \
-    && apt-get -y install unzip git \
+    && apt-get -y install unzip git curl \
     && apt-get install -y --allow-unauthenticated --no-install-recommends lib32stdc++6 libstdc++6 libglu1-mesa locales locales-all lcov \
     && rm -rf /var/lib/apt/lists/*
 
