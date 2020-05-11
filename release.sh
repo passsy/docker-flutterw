@@ -11,11 +11,16 @@ git tag -a "v$VERSION" -m "Version $VERSION"
 git push
 git push --tags
 
-docker tag passsy/flutterw:latest passsy/flutterw:base-VERSION
+# Legacy
+docker tag passsy/flutterw:latest passsy/flutterw:base-$VERSION
 docker push passsy/flutterw:latest
 
-docker tag passsy/flutterw:base-latest passsy/flutterw:base-VERSION
+# Base version
+docker tag passsy/flutterw:base-latest passsy/flutterw:base-$VERSION
+docker push passsy/flutterw:base-$VERSION
 docker push passsy/flutterw:base-latest
 
-docker tag passsy/flutterw:android-latest passsy/flutterw:android-VERSION
+# With android
+docker tag passsy/flutterw:android-latest passsy/flutterw:android-$VERSION
+docker push passsy/flutterw:android-$VERSION
 docker push passsy/flutterw:android-latest
