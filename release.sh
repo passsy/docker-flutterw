@@ -7,7 +7,7 @@ echo "version: $VERSION"
 
 git add -A
 git commit -m "Version $VERSION"
-git tag -a "v$VERSION"
+git tag -a "v$VERSION" -m "Version $VERSION"
 git push
 git push --tags
 
