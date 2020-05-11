@@ -1,18 +1,18 @@
 # Flutterw docker image
 
-Allows building of flutter projects which use [flutter wrapper](https://github.com/passsy/flutter_wrapper)
+A docker image which contains all Flutter dependencies without actually installing Flutter. This image should be used together with the [flutter_wrapper](https://github.com/passsy/flutter_wrapper), which installs Flutter automatically based on the version used in the project.
 
-Checkout [dockerhub](https://cloud.docker.com/repository/docker/passsy/flutterw/) for the latest version
 
-## Build
+Two versions are available on [dockerhub](https://cloud.docker.com/repository/docker/passsy/flutterw/)
 
-```bash
-docker build -t passsy/flutterw:0.2.0 .
+Base variant, contains only Flutter dependencies
+```
+passsy/flutterw:base-latest
 ```
 
-## Release
-```bash
-docker push passsy/flutterw:0.2.0
+Variant with all 
+```
+passsy/flutterw:android-latest
 ```
 
 ## License
