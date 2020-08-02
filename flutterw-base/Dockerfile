@@ -7,13 +7,18 @@ ENV HOME=/home/dash \
     LC_ALL=en_US.UTF-8 \
     LANGUAGE=en_US:en
 
-# Install all dependencies which flutter requires
+# Install Flutter tooling dependencies
 RUN apt-get update \
+    && apt-get install -y --allow-unauthenticated --no-install-recommends lib32stdc++6 libstdc++6 libglu1-mesa locales locales-all unzip curl lcov \
+    && rm -rf /var/lib/apt/lists/*
+
+# Update git 
+RUN apt-get update \ 
+    && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y software-properties-common \
     && add-apt-repository ppa:git-core/ppa \
     && apt-get update \
-    && apt-get install -y unzip curl git \
-    && apt-get install -y --allow-unauthenticated --no-install-recommends lib32stdc++6 libstdc++6 libglu1-mesa locales locales-all lcov \
+    && apt-get install -y git \
     && apt-get remove -y software-properties-common \
     && rm -rf /var/lib/apt/lists/*
 
