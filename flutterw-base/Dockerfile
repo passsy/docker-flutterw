@@ -20,6 +20,7 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install -y git \
     && apt-get remove -y software-properties-common \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && git --version
 
 WORKDIR /home/dash
