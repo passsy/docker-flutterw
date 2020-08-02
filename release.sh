@@ -12,8 +12,9 @@ git push
 git push --tags
 
 # Legacy
-docker tag passsy/flutterw:latest passsy/flutterw:$VERSION
+docker tag passsy/flutterw:base-latest passsy/flutterw:$VERSION
 docker push passsy/flutterw:$VERSION
+docker tag passsy/flutterw:base-latest passsy/flutterw:latest
 docker push passsy/flutterw:latest
 
 # Base version
