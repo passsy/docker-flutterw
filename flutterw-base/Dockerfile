@@ -1,6 +1,6 @@
-# inspired by https://github.com/cirruslabs/docker-images-flutter/blob/master/base/Dockerfile but without installing flutter
+# inspired by https://github.com/cirruslabs/docker-images-android/blob/master/sdk/tools/Dockerfile but without installing flutter
 
-FROM ubuntu:bionic
+FROM ubuntu:focal
 
 ENV HOME=/home/dash \
     LANG=en_US.UTF-8 \
