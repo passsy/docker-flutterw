@@ -9,7 +9,7 @@ ENV HOME=/home/dash \
 
 # Install Flutter tooling dependencies
 RUN apt-get update \
-    && apt-get install -y --allow-unauthenticated --no-install-recommends lib32stdc++6 libstdc++6 libglu1-mesa locales locales-all unzip curl lcov \
+    && apt-get install -y --allow-unauthenticated --no-install-recommends lib32stdc++6 libstdc++6 libglu1-mesa locales locales-all unzip curl lcov xdg-utils \
     && rm -rf /var/lib/apt/lists/*
 
 # Update git 
