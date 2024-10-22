@@ -33,9 +33,12 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && git --version
 
-# add github.com to known hosts
+# Install ssh
 WORKDIR /root/.ssh
-RUN chmod 0600 /root/.ssh \
-    && ssh-keyscan -t rsa github.com >> known_hosts
+RUN  apt-get update \
+    && apt-get install -y --allow-unauthenticated --no-install-recommends ssh \   
+    && chmod 0600 /root/.ssh \
+    && ssh-keyscan -t rsa github.com >> known_hosts \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /home/dash
