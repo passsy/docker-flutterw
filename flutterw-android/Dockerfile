@@ -4,8 +4,8 @@ FROM passsy/flutterw:base-latest
 
 ENV ANDROID_HOME=/opt/android-home
 ENV ANDROID_SDK_ROOT=/opt/android-home
-ENV ANDROID_COMMANDLINE_TOOLS=$ANDROID_HOME/cmdline-tools
-ENV PATH=${PATH}:${ANDROID_COMMANDLINE_TOOLS}/tools/bin:${ANDROID_HOME}/platform-tools
+ENV ANDROID_COMMANDLINE_TOOLS=$ANDROID_HOME/cmdline-tools/latest
+ENV PATH=${PATH}:${ANDROID_COMMANDLINE_TOOLS}/bin:${ANDROID_HOME}/platform-tools
 
 # Install OpenJDK 17 (LTS)
 RUN apt-get update \
@@ -15,8 +15,9 @@ RUN apt-get update \
 RUN cd /opt \
     && mkdir android-home \
     # comes from https://developer.android.com/studio/#command-tools
-    && wget -q https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip -O android-commandlinetools.zip \
-    && unzip -q android-commandlinetools.zip -d ${ANDROID_COMMANDLINE_TOOLS} \
+    && wget -q https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O android-commandlinetools.zip \
+    && unzip -q android-commandlinetools.zip \
+    && mkdir -p ${ANDROID_COMMANDLINE_TOOLS} && mv cmdline-tools/* ${ANDROID_COMMANDLINE_TOOLS} && rm -rf cmdline-tools/ \
     && rm android-commandlinetools.zip
 
 RUN yes | sdkmanager --licenses
