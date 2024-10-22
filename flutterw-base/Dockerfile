@@ -23,4 +23,9 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && git --version
 
+# add github.com to known hosts
+WORKDIR /root/.ssh
+RUN chmod 0600 /root/.ssh \
+    && ssh-keyscan -t rsa github.com >> known_hosts
+
 WORKDIR /home/dash
