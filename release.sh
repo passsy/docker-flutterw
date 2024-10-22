@@ -1,6 +1,6 @@
 set -ex
 
-VERSION=`cat VERSION`
+VERSION=$(cat VERSION)
 echo "version: $VERSION"
 
 ./build.sh
