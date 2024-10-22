@@ -1,6 +1,6 @@
 # inspired by https://github.com/cirruslabs/docker-images-android/blob/master/sdk/tools/Dockerfile but without installing flutter
 
-FROM ubuntu:focal
+FROM ubuntu:24.04
 
 ENV HOME=/home/dash \
     LANG=en_US.UTF-8 \
