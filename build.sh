@@ -1,6 +1,6 @@
 set -ex
 
-docker pull ubuntu:focal
+docker pull ubuntu:22.04
 
 cd flutterw-base
 docker build --platform linux/amd64 -t passsy/flutterw:base-latest .
