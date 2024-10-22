@@ -19,7 +19,7 @@ RUN apt-get update \
 
 # Tools that are welcomed in the flutter world
 RUN apt-get update \
-    && apt-get install -y --allow-unauthenticated --no-install-recommends locales locales-all lcov xdg-utils \
+    && apt-get install -y --allow-unauthenticated --no-install-recommends locales locales-all lcov xdg-utils wget \
     && rm -rf /var/lib/apt/lists/*
 
 # Update git 
