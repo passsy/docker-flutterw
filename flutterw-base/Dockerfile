@@ -7,9 +7,19 @@ ENV HOME=/home/dash \
     LC_ALL=en_US.UTF-8 \
     LANGUAGE=en_US:en
 
-# Install Flutter tooling dependencies
+# Install Flutter Linux tooling
 RUN apt-get update \
-    && apt-get install -y --allow-unauthenticated --no-install-recommends lib32stdc++6 libstdc++6 libglu1-mesa locales locales-all unzip curl lcov xdg-utils \
+    && apt-get install -y --allow-unauthenticated --no-install-recommends curl git unzip xz-utils zip libglu1-mesa \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Flutter Linux tooling
+RUN apt-get update \
+    && apt-get install -y --allow-unauthenticated --no-install-recommends clang cmake git ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Tools that are welcomed in the flutter world
+RUN apt-get update \
+    && apt-get install -y --allow-unauthenticated --no-install-recommends locales locales-all lcov xdg-utils \
     && rm -rf /var/lib/apt/lists/*
 
 # Update git 
