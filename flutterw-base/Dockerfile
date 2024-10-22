@@ -33,6 +33,9 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && git --version
 
+# Allow git usage within mounted volumes
+RUN git config --global --add safe.directory "*"
+
 # Install ssh
 WORKDIR /root/.ssh
 RUN  apt-get update \
