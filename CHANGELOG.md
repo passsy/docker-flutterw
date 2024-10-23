@@ -1,5 +1,9 @@
 # Changelog
 
+## 24.2 `23.10.2024`
+
+- Explicitly allow git usage `/__w` for github actions
+
 ## 24.1 `22.10.2024`
 
 - Allow git usage within mounted volumes
