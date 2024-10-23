@@ -33,8 +33,10 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && git --version
 
-# Allow git usage within mounted volumes
-RUN git config --global --add safe.directory "*"
+# Allow git usage within mounted volumes on github actions
+# See https://github.com/actions/runner/issues/2033
+RUN mkdir -p /__w/ \
+    && git config --global --add safe.directory /__w/
 
 # Install ssh
 WORKDIR /root/.ssh
