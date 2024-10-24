@@ -35,7 +35,11 @@ RUN apt-get update \
 
 # Mark every directory as safe
 # See https://github.com/actions/runner/issues/2033
-RUN git config --global --add safe.directory "*"
+RUN git config --global --add safe.directory "*" \
+    # since github resets $HOME, copy it over to overcome the issue.
+    # See https://github.com/actions/runner/issues/863
+    && mkdir -p /github/home/ \
+    && cp ~/.gitconfig /github/home/.gitconfig
 
 # Install ssh
 WORKDIR /root/.ssh
