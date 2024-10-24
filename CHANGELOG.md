@@ -1,5 +1,9 @@
 # Changelog
 
+## 24.3 `24.10.2024`
+
+- Set safe.directory `*` again
+
 ## 24.2 `23.10.2024`
 
 - Explicitly allow git usage `/__w` for github actions
